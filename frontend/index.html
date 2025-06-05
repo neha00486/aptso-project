@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aptso - Job Search</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">Aptso</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Company Reviews</a>
+      <a href="dashboard.html">AI Interview</a>
+      <a href="#">Sign In</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <form id="jobSearchForm">
+      <input type="text" name="title" placeholder="Job title, keywords, or company" required/>
+      <input type="text" name="location" placeholder="City, state, zip code, or remote" required/>
+      <button type="submit">Find jobs</button>
+    </form>
+
+    <div class="welcome">
+      <h1>Welcome to Aptso!</h1>
+      <p>Create an account or sign in to see your personalised job recommendations.</p>
+      <div class="extra-options">
+        <a href="#" class="resume-link">Post your resume</a> - It only takes a few seconds
+      </div>
+    </div>
+
+    <section id="job-results">
+      <h2>Job Results</h2>
+      <div id="results-container"></div>
+    </section>
+  </main>
+
+  <script>
+  const form = document.getElementById('jobSearchForm');
+  form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const title = form.title.value.trim();
+  const location = form.location.value.trim();
+
+  const response = await fetch('http://localhost:8000/search', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ title, location }),
+  });
+
+  const jobs = await response.json();
+
+  const container = document.getElementById("results-container");
+  container.innerHTML = "";
+
+  jobs.forEach(job => {
+    const jobCard = document.createElement("div");
+    jobCard.style.border = "1px solid #ccc";
+    jobCard.style.margin = "10px 0";
+    jobCard.style.padding = "10px";
+    jobCard.innerHTML = `
+      <h3>${job.title || 'Title not available'}</h3>
+      <p><strong>Company:</strong> ${job.company || 'Not specified'}</p>
+      <p><strong>Location:</strong> ${job.location || 'Not specified'}</p>
+      <p><strong>Link:</strong> <a href="${job.url}" target="_blank">Apply</a></p>
+    `;
+    container.appendChild(jobCard);
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2557a7;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 60px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+form input {
+  padding: 10px;
+  width: 250px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #2557a7;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.welcome h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #555;
+}
+
+.extra-options {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.resume-link {
+  color: #2557a7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.resume-link:hover {
+  text-decoration: underline;
+}
+
+.dashboard {
+  padding: 40px;
+  text-align: center;
+}
+
+.ai-interview {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f4ff;
+  border-radius: 8px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-interview button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #2557a7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
