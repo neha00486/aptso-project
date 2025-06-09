@@ -1,0 +1,6 @@
+{
+    "good_posture": 73,
+    "unclear_posture": 0,
+    "good_eye_contact": 73,
+    "no_eye_contact": 0
+}
