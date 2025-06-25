@@ -6,6 +6,8 @@ __pycache__/
 # Node
 node_modules/
 dist/
+*/node_modules/
+**/node_modules/
 
 # OS junk
 .DS_Store

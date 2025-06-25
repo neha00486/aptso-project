@@ -1,0 +1,10 @@
+Gemini Utterance 1: Hello Neha, thank you for coming in today.I am excited to learn more about your skills and experience.To start, can you briefly describe your understanding of the role of an AI software engineer and what excites you most about this field?
+Gemini Utterance 2: [[[Response from user:1]]]
+Gemini Utterance 3: Thanks for your perspective.Could you elaborate on a specific project or experience that demonstrates your ability to translate theoretical AI concepts into practical, real-world solutions?
+Gemini Utterance 4: [[Response from user:2]]]
+Gemini Utterance 5: That's interesting.What were some of the biggest challenges you faced while developing the AI interview module, and how did you overcome them?
+Gemini Utterance 6: [[Response from user:3]]]
+Gemini Utterance 7: One of the main challenges was to make the AI feel like a human.
+Gemini Utterance 8: That's
+Gemini Utterance 9: Understood.Can you describe the process you used to train or fine-tune the AI model to achieve a more human-like interaction and what metrics did you use to evaluate its success?
+Gemini Utterance 10: [[Response from user:4]]]
