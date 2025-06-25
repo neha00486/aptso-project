@@ -1,11 +1,27 @@
-node_modules/
-# Ignore Python virtual environment
-ai-interview-backend/venv/
-backend/venv/
+# Python
 venv/
 __pycache__/
 *.pyc
-*.pyo
+
+# Node
+node_modules/
+dist/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# DLLs and heavy binaries
+*.dll
+*.lib
 *.pyd
-*.swp
-*.swo
+
+# Audio/outputs
+*.wav
+*.mp3
+*.mp4
+/public/audios/
+
+# Secrets
+.env
+config.py
