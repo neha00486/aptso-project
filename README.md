@@ -57,7 +57,8 @@ aptso-project/
 │           ├── vite + Tailwind setup
 │           └── src/App.tsx, AIInterviewPage.tsx etc.
 
-## ⚙️ Installation & Setup
+---
+⚙️ Installation & Setup
 1. Clone the Repo
 bash
 Copy
@@ -71,7 +72,6 @@ Edit
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
-Default runs on: http://localhost:8000
 
 3. 🌐 Frontend (HTML/CSS Job Site)
 Simply open in browser:
