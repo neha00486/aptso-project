@@ -3,8 +3,6 @@
 
 A full-stack job search and AI interview platform powered by **FastAPI**, **MongoDB**, **Django**, and **React**. APTSO helps candidates search live job listings, simulate interviews with AI, and offers features like resume parsing, authentication, and admin management (in progress).
 
-# 🧠 Aptso – AI-Powered Job Search and Interview Platform
-
 Aptso is a smart recruitment platform that helps candidates search for jobs and practice interviews with an AI interviewer. It integrates real-time job listings and simulates realistic mock interviews using voice, lip-sync, and posture detection powered by AI.
 e67af417f (Add project README)
 
