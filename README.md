@@ -56,7 +56,8 @@ aptso-project/
 │       └── frontend/           # React Frontend
 │           ├── vite + Tailwind setup
 │           └── src/App.tsx, AIInterviewPage.tsx etc.
-⚙️ Installation & Setup
+
+## ⚙️ Installation & Setup
 1. Clone the Repo
 bash
 Copy
