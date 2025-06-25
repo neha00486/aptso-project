@@ -1,3 +1,0 @@
-Gemini Utterance 1: Hello Arya, thank you for coming in today.I am excited to learn more about you and your qualifications.To start, can you briefly describe a situation where you had to quickly adapt to a change in priorities while working on a project?
-Gemini Utterance 2: Arya, thank you for coming in today.I am excited to learn more about you and your qualifications.To start, can you briefly describe a situation where you had to quickly adapt to a change in priorities while working on a project?
-Gemini Utterance 3: [[[Response from user:1]]]

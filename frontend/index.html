@@ -13,7 +13,7 @@
       <a href="#">Home</a>
       <a href="#">Company Reviews</a>
       <a href="http://localhost:5173/">AI Interview</a>
-      <a href="#">Sign In</a>
+      <button id="logoutBtn" style="background: none; border: none; color: #2557a7; cursor: pointer;">Logout</button>
     </nav>
   </header>
 
@@ -32,48 +32,62 @@
       </div>
     </div>
 
-    <section id="job-results">
+    <section id="job-results" style="display: none;">
       <h2>Job Results</h2>
       <div id="results-container"></div>
     </section>
   </main>
 
   <script>
-  const form = document.getElementById('jobSearchForm');
-  form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+    // 🔍 Job Search
+    const form = document.getElementById('jobSearchForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-  const title = form.title.value.trim();
-  const location = form.location.value.trim();
+      const title = form.title.value.trim();
+      const location = form.location.value.trim();
 
-  const response = await fetch('http://localhost:8000/search', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ title, location }),
-  });
+      const response = await fetch('http://localhost:8000/jobs/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, location }),
+      });
 
-  const jobs = await response.json();
+      const jobs = await response.json();
 
-  const container = document.getElementById("results-container");
-  container.innerHTML = "";
+      const container = document.getElementById("results-container");
+      container.innerHTML = "";
 
-  jobs.forEach(job => {
-    const jobCard = document.createElement("div");
-    jobCard.style.border = "1px solid #ccc";
-    jobCard.style.margin = "10px 0";
-    jobCard.style.padding = "10px";
-    jobCard.innerHTML = `
-      <h3>${job.title || 'Title not available'}</h3>
-      <p><strong>Company:</strong> ${job.company || 'Not specified'}</p>
-      <p><strong>Location:</strong> ${job.location || 'Not specified'}</p>
-      <p><strong>Link:</strong> <a href="${job.url}" target="_blank">Apply</a></p>
-    `;
-    container.appendChild(jobCard);
-  });
-});
+      jobs.forEach(job => {
+        const jobCard = document.createElement("div");
+        jobCard.style.border = "1px solid #ccc";
+        jobCard.style.margin = "10px 0";
+        jobCard.style.padding = "10px";
+        jobCard.innerHTML = `
+          <h3>${job.title || 'Title not available'}</h3>
+          <p><strong>Company:</strong> ${job.company || 'Not specified'}</p>
+          <p><strong>Location:</strong> ${job.location || 'Not specified'}</p>
+          <p><strong>Link:</strong> <a href="${job.url}" target="_blank">Apply</a></p>
+        `;
+        container.appendChild(jobCard);
+      });
 
-</script>
+      document.getElementById("job-results").style.display = "block";
+    });
+
+    // 🔴 Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      const res = await fetch('http://localhost:3000/logout', {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      const data = await res.json();
+      alert(data.message);
+      window.location.href = 'auth.html'; // Go to login page
+    });
+  </script>
 </body>
 </html>

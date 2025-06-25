@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aptso - Login or Signup</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .auth-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .auth-box h2 {
+      text-align: center;
+    }
+
+    .auth-box input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .auth-box button {
+      width: 100%;
+      padding: 10px;
+      background: #2557a7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #2557a7;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-box">
+    <h2 id="form-title">Sign In</h2>
+    <form id="authForm">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Sign In</button>
+    </form>
+    <div class="toggle" onclick="toggleForm()">Don't have an account? Sign up</div>
+  </div>
+
+  <script>
+    let isLogin = true;
+
+    function toggleForm() {
+      isLogin = !isLogin;
+      document.getElementById("form-title").innerText = isLogin ? "Sign In" : "Sign Up";
+      document.querySelector("button").innerText = isLogin ? "Sign In" : "Sign Up";
+      document.querySelector(".toggle").innerText = isLogin
+        ? "Don't have an account? Sign up"
+        : "Already have an account? Sign in";
+    }
+
+    document.getElementById("authForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const url = isLogin ? "http://localhost:3000/login" : "http://localhost:3000/signup";
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: form.email.value,
+          password: form.password.value
+        }),
+      });
+
+      const data = await res.json();
+      if (data.message.includes("successful")) {
+        window.location.href = "index.html"; // go to Aptso homepage
+      } else {
+        alert(data.message);
+      }  
+    });
+  </script>
+</body>
+</html>
