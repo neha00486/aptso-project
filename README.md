@@ -1,8 +1,4 @@
-Great! Since you want a clean and properly formatted `README.md` for your Aptso project, here's a well-structured version based on your project structure and setup:
 
----
-
-### 📘 README.md for Aptso: AI-Powered Job Platform
 
 # APTSO - AI-Powered Recruitment Platform
 
@@ -127,6 +123,4 @@ node server.js
 
 MIT License – use it freely for educational or commercial purposes.
 
----
 
-Let me know if you want this README saved as a file, or pushed to your GitHub repo!
